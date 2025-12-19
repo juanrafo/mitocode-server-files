@@ -1,0 +1,50 @@
+server:
+  port: ${CUSTOM.SERVER.PORT:9001}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://localhost:8761/eureka}
+    fetchRegistry: true
+
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      mitocodeCircuitbreakerProduct:
+        slidingWindowSize: 20
+        failureRateThreshold: 75
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 10
+        slowCallDurationThreshold: 2s
+        slowCallRateThreshold: 10
+      # mitocodeCircuitbreakerUser:
+      #   slidingWindowSize: 50
+      #   failureRateThreshold: 80
+      #   waitDurationInOpenState: 15s
+      #   permittedNumberOfCallsInHalfOpenState: 20
+      #   slowCallDurationThreshold: 2s
+      #   slowCallRateThreshold: 10
+    instances:
+      product-cb:
+        base-config: mitocodeCircuitbreakerProduct
+      # userCB:
+      #   base-config: mitocodeCircuitbreakerUser
+  timelimiter:
+    configs:
+      mitocodeTimeLimiterProduct:
+        timeoutDuration: 1s
+    instances:
+      product-time:
+        base-config: mitocodeTimeLimiterProduct
+
+# feign:
+#   client:
+#     config:
+#       default:
+#         connectTimeout: 10000
+#         readTimeout: 20000

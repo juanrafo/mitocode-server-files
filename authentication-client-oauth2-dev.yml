@@ -1,0 +1,14 @@
+server:
+  port: 8088
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          # github:
+            # client-id: client-id-xxxxxxxxxxxx
+            # client-secret: client-secret-xxxxxxxxxxxx
+          google:
+            client-id: client-id-xxxxxxxxxxxx
+            client-secret: client-secret-xxxxxxxxxxxx
