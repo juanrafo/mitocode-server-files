@@ -40,6 +40,8 @@ spring:
           filters:
             - StripPrefix=2
             - AddRequestParameter=tokens,mitocode
+            - AddRequestHeader=token,mitocode            
+            - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_Mitocode
 
         - id: fallback
           uri: http://localhost:9002/product/false
