@@ -12,7 +12,7 @@ eureka:
     fetchRegistry: true
 
 
-#resilience4j:
+resilience4j:
 #  circuitbreaker:
 #    configs:
 #      mitocodeCircuitbreakerProduct:
@@ -34,13 +34,13 @@ eureka:
 #        base-config: mitocodeCircuitbreakerProduct
       # userCB:
       #   base-config: mitocodeCircuitbreakerUser
-#  timelimiter:
-#    configs:
-#      mitocodeTimeLimiterProduct:
-#        timeoutDuration: 1s
-#    instances:
-#      product-time:
-#        base-config: mitocodeTimeLimiterProduct
+  timelimiter:
+    configs:
+      mitocodeTimeLimiterProduct:
+        timeoutDuration: 20s
+    instances:
+      product-time:
+        base-config: mitocodeTimeLimiterProduct
 
 # feign:
 #   client:
