@@ -12,16 +12,16 @@ eureka:
     fetchRegistry: true
 
 
-resilience4j:
-  circuitbreaker:
-    configs:
-      mitocodeCircuitbreakerProduct:
-        slidingWindowSize: 20
-        failureRateThreshold: 75
-        waitDurationInOpenState: 30s
-        permittedNumberOfCallsInHalfOpenState: 10
-        slowCallDurationThreshold: 2s
-        slowCallRateThreshold: 10
+#resilience4j:
+#  circuitbreaker:
+#    configs:
+#      mitocodeCircuitbreakerProduct:
+#        slidingWindowSize: 20
+#        failureRateThreshold: 75
+#        waitDurationInOpenState: 30s
+#        permittedNumberOfCallsInHalfOpenState: 10
+#        slowCallDurationThreshold: 2s
+#       slowCallRateThreshold: 10
       # mitocodeCircuitbreakerUser:
       #   slidingWindowSize: 50
       #   failureRateThreshold: 80
@@ -29,18 +29,18 @@ resilience4j:
       #   permittedNumberOfCallsInHalfOpenState: 20
       #   slowCallDurationThreshold: 2s
       #   slowCallRateThreshold: 10
-    instances:
-      product-cb:
-        base-config: mitocodeCircuitbreakerProduct
+#    instances:
+#      product-cb:
+#        base-config: mitocodeCircuitbreakerProduct
       # userCB:
       #   base-config: mitocodeCircuitbreakerUser
-  timelimiter:
-    configs:
-      mitocodeTimeLimiterProduct:
-        timeoutDuration: 1s
-    instances:
-      product-time:
-        base-config: mitocodeTimeLimiterProduct
+#  timelimiter:
+#    configs:
+#      mitocodeTimeLimiterProduct:
+#        timeoutDuration: 1s
+#    instances:
+#      product-time:
+#        base-config: mitocodeTimeLimiterProduct
 
 # feign:
 #   client:
