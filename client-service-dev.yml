@@ -40,9 +40,9 @@ resilience4j:
       mitocode: 
         #timeoutDuration: 20s
         enabled: false
-    instances:
-      product-time:
-        base-config: mitocodeTimeLimiterProduct
+    #instances:
+    #  product-time:
+    #    base-config: mitocodeTimeLimiterProduct
 
 # feign:
 #   client:
