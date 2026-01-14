@@ -37,7 +37,8 @@ resilience4j:
   timelimiter:
     configs:
       mitocodeTimeLimiterProduct:
-        timeoutDuration: 20s
+        #timeoutDuration: 20s
+        enabled: false
     instances:
       product-time:
         base-config: mitocodeTimeLimiterProduct
