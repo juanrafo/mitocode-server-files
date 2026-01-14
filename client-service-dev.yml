@@ -36,7 +36,8 @@ resilience4j:
       #   base-config: mitocodeCircuitbreakerUser
   timelimiter:
     configs:
-      mitocodeTimeLimiterProduct:
+      #mitocodeTimeLimiterProduct:
+      mitocode: 
         #timeoutDuration: 20s
         enabled: false
     instances:
