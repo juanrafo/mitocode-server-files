@@ -12,7 +12,7 @@ eureka:
     fetchRegistry: true
 
 
-resilience4j:
+#resilience4j:
 #  circuitbreaker:
 #    configs:
 #      mitocodeCircuitbreakerProduct:
