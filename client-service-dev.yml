@@ -15,34 +15,25 @@ eureka:
 resilience4j:
   circuitbreaker:
     configs:
-      mitocode-circuitbreaker-product:
+      mitocodeCircuitbreakerProduct:
         slidingWindowSize: 20
         failureRateThreshold: 75
         waitDurationInOpenState: 30s
         permittedNumberOfCallsInHalfOpenState: 10
         slowCallDurationThreshold: 2s
         slowCallRateThreshold: 10
-      mitocode-circuitbreaker-user:
-        slidingWindowSize: 50
-        failureRateThreshold: 80
-        waitDurationInOpenState: 15s
-        permittedNumberOfCallsInHalfOpenState: 20
-        slowCallDurationThreshold: 2s
-        slowCallRateThreshold: 10
+      # mitocodeCircuitbreakerUser:
+      #   slidingWindowSize: 50
+      #   failureRateThreshold: 80
+      #   waitDurationInOpenState: 15s
+      #   permittedNumberOfCallsInHalfOpenState: 20
+      #   slowCallDurationThreshold: 2s
+      #   slowCallRateThreshold: 10
     instances:
-      productCB:
-        base-config: mitocode-circuitbreaker-product
-      userCB:
-        base-config: mitocode-circuitbreaker-user
-  #timelimiter:
-    #configs:
-      #mitocodeTimeLimiterProduct:
-    #  mitocode: 
-        #timeoutDuration: 20s
-    #    enabled: false
-    #instances:
-    #  product-time:
-    #    base-config: mitocodeTimeLimiterProduct
+      product-cb:
+        base-config: mitocodeCircuitbreakerProduct
+      # userCB:
+      #   base-config: mitocodeCircuitbreakerUser
 
 # feign:
 #   client:
