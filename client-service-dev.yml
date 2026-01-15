@@ -34,12 +34,12 @@ resilience4j:
 #        base-config: mitocodeCircuitbreakerProduct
       # userCB:
       #   base-config: mitocodeCircuitbreakerUser
-  timelimiter:
-    configs:
+  #timelimiter:
+    #configs:
       #mitocodeTimeLimiterProduct:
-      mitocode: 
+    #  mitocode: 
         #timeoutDuration: 20s
-        enabled: false
+    #    enabled: false
     #instances:
     #  product-time:
     #    base-config: mitocodeTimeLimiterProduct
