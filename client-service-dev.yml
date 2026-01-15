@@ -12,16 +12,16 @@ eureka:
     fetchRegistry: true
 
 
-#resilience4j:
-#  circuitbreaker:
-#    configs:
-#      mitocodeCircuitbreakerProduct:
-#        slidingWindowSize: 20
-#        failureRateThreshold: 75
-#        waitDurationInOpenState: 30s
-#        permittedNumberOfCallsInHalfOpenState: 10
-#        slowCallDurationThreshold: 2s
-#       slowCallRateThreshold: 10
+resilience4j:
+  circuitbreaker:
+    configs:
+      mitocode-circuitbreaker:
+        slidingWindowSize: 20
+        failureRateThreshold: 75
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 10
+        slowCallDurationThreshold: 2s
+        slowCallRateThreshold: 10
       # mitocodeCircuitbreakerUser:
       #   slidingWindowSize: 50
       #   failureRateThreshold: 80
@@ -29,9 +29,9 @@ eureka:
       #   permittedNumberOfCallsInHalfOpenState: 20
       #   slowCallDurationThreshold: 2s
       #   slowCallRateThreshold: 10
-#    instances:
-#      product-cb:
-#        base-config: mitocodeCircuitbreakerProduct
+    instances:
+      mitocodeCB:
+        base-config: mitocode-circuitbreaker
       # userCB:
       #   base-config: mitocodeCircuitbreakerUser
   #timelimiter:
