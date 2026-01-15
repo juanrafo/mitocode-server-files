@@ -30,7 +30,7 @@ resilience4j:
       #   slowCallDurationThreshold: 2s
       #   slowCallRateThreshold: 10
     instances:
-      product-cb:
+      productCB:
         base-config: mitocodeCircuitbreakerProduct
       # userCB:
       #   base-config: mitocodeCircuitbreakerUser
