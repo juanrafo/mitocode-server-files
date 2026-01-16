@@ -27,3 +27,26 @@ spring:
             - Path=/api/product-service/**
           filters:
             - StripPrefix=2
+            - name: CircuitBreaker
+              args:
+                name: product-cb
+resilience4j:
+  circuitbreaker:
+    configs:
+      mitocodeCircuitbreakerProduct:
+        slidingWindowSize: 20
+        failureRateThreshold: 75
+        waitDurationInOpenState: 30s
+        permittedNumberOfCallsInHalfOpenState: 10
+        slowCallDurationThreshold: 2s
+        slowCallRateThreshold: 10
+    instances:
+      product-cb:
+        base-config: mitocodeCircuitbreakerProduct
+  timelimiter:
+    configs:
+      mitocodeTimeLimiterProduct:
+        timeoutDuration: 5s
+    instances:
+      product-time:
+        base-config: mitocodeTimeLimiterProduct            
