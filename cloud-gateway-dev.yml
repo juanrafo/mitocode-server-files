@@ -42,6 +42,9 @@ spring:
             - AddRequestParameter=tokens,mitocode
             - AddRequestHeader=token,mitocode            
             - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_Mitocode
+            - name:Circuitbreaker
+              args:
+                name: product-cb
 
         - id: fallback
           uri: http://localhost:9002/product/false
