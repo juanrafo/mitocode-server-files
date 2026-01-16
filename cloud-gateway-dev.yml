@@ -30,15 +30,6 @@ spring:
             - name: CircuitBreaker
               args:
                 name: product-cb
-                fallbackUri: forward:/api/user-service/user/
-                statusCodes: 500, 400, 401, 403
-            # - AddRequestHeader=token,mitocode
-            # - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_Mitocode
-            # - MitocodeFilter=MitocodeKey, MitocodeValue
-            # - name: CustomFilter
-              # args:
-                # headerKey: MitocodeKey
-                # headerValue: MitocodeValue
 resilience4j:
   circuitbreaker:
     configs:
