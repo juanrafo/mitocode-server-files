@@ -37,7 +37,7 @@ kafka:
 
 info:
   app:
-    name: Microservicio Product Service 
+    app-name: Microservicio Product Service 
     description: Módulo de la arquitectura que disponibiliza información de los Productos
     version: 1.0
 
@@ -52,7 +52,7 @@ management:
     group:
      custom: 
       include: diskSpace, memory
-      show-components: always
+      show-component: always
       show-details: always        
   info:
    env:
