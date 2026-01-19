@@ -28,43 +28,21 @@ spring:
       uri: mongodb://mitocode:mitocode@host.docker.internal:27017
       authentication-database: admin
 
-# Kafka Configuration
-kafka:
-  mitocode:
-    topic: mitocode
-    server: 127.0.0.1
-    port: 9092
-
 info:
   app:
-    app-name: Microservicio Product Service 
+    name: Microservicio Product Service 
     description: Módulo de la arquitectura que disponibiliza información de los Productos
     version: 1.0
 
 management:
- auditevents:
-  enabled: true
- endpoints:
-  web:
-   exposure:
-    include: '*'
-    base-path: /actuator
-  endpoint:
-   health:
-    group:
-     custom: 
-      include: diskSpace, ping, memory, mem
-      show-component: always
-      show-details: always        
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /actuator
   info:
-   env:
-    enabled: true
-  health:
-   env:
-    enabled: true
-springdoc:
-  api-docs:
-    path: /apis-docs
+    env:
+      enabled: true
     enabled: true
   swagger-ui:
     path: /swagger-ui.html
