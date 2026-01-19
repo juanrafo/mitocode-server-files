@@ -46,7 +46,7 @@ management:
     health:
       group:
         custom:
-          include: diskSpace
+          include: diskSpace, ping, memory, mem
           show-component: always
           show-details: always
   info:
