@@ -50,16 +50,16 @@ management:
   endpoint:
    health:
     group:
-       custom: 
-        include: diskSpace,memory
-        show-components: always
-        show-details: always        
+     custom: 
+      include: diskSpace, memory
+      show-components: always
+      show-details: always        
   info:
-    env:
-      enabled: true
+   env:
+    enabled: true
   health:
-    env:
-      enabled: true
+   env:
+    enabled: true
 springdoc:
   api-docs:
     path: /apis-docs
