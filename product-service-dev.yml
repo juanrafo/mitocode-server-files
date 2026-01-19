@@ -42,16 +42,18 @@ info:
     version: 1.0
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
-      base-path: /actuator
+ auditevents:
+  enabled: true
+ endpoints:
+  web:
+   exposure:
+    include: '*'
+    base-path: /actuator
   endpoint:
    health:
     group:
      custom: 
-      include: diskSpace, memory
+      include: diskSpace, ping, memory, mem
       show-component: always
       show-details: always        
   info:
