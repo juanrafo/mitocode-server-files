@@ -35,15 +35,23 @@ info:
     version: 1.0
 
 management:
+  auditevents:
+    enable: true
   endpoints:
     web:
       exposure:
         include: '*'
       base-path: /actuator
+  endpoint:
+    health:
+      group:
+        custom:
+          include: diskSpace, ping, memory, mem
+          show-component: always
+          show-details: always
   info:
     env:
       enabled: true
-    enabled: true
-  swagger-ui:
-    path: /swagger-ui.html
-    enabled: true
+  health:
+    env:
+      enabled: true
