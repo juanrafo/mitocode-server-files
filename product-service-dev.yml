@@ -47,10 +47,19 @@ management:
       exposure:
         include: '*'
       base-path: /actuator
+  endpoint:
+   health:
+    group:
+       custom: 
+        include: diskSpace,memory
+        show-components: always
+        show-details: always        
   info:
     env:
       enabled: true
-
+  health:
+    env:
+      enabled: true
 springdoc:
   api-docs:
     path: /apis-docs
