@@ -30,7 +30,7 @@ spring:
 
 info:
   app:
-    name: Microservicio Product Service 
+    app-name: Microservicio Product Service 
     description: Módulo de la arquitectura que disponibiliza información de los Productos
     version: 1.0
 
