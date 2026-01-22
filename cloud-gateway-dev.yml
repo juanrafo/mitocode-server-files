@@ -10,13 +10,13 @@ eureka:
       defaultZone: ${EUREKA.SERVER.HOSTNAME:http://host.docker.internal:8761/eureka}
     fetchRegistry: true
 
-spring:
-  cloud:
-    gateway:
-      routes:            
-        - id: product-service
-          uri: lb://product-service
-          predicates:
-            - Path=/api/product-service/**
-          filters:
-            - StripPrefix=2
+#spring:
+#  cloud:
+#    gateway:
+#      routes:            
+#        - id: product-service
+#          uri: lb://product-service
+#          predicates:
+#            - Path=/api/product-service/**
+#          filters:
+#            - StripPrefix=2
