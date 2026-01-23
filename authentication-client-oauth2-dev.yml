@@ -1,14 +1,10 @@
 server:
   port: 8088
-
 spring:
   security:
     oauth2:
       client:
         registration:
-           github:
-             client-id: Ov23lif9xBHpiTaonwWW
-             client-secret: 450d35dc66e61298a45217818b7aea698b887edc
-          #google:
-            #client-id: client-id-xxxxxxxxxxxx
-            #client-secret: client-secret-xxxxxxxxxxxx
+          github:
+            client-id: Ov23lif9xBHpiTaonwWW
+            client-secret: 450d35dc66e61298a45217818b7aea698b887edc
