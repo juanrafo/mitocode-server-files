@@ -8,3 +8,13 @@ spring:
           github:
             client-id: Ov23lif9xBHpiTaonwWW
             client-secret: 450d35dc66e61298a45217818b7aea698b887edc
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+  client:
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://host.docker.internal:8761/eureka}
+    fetchRegistry: true
