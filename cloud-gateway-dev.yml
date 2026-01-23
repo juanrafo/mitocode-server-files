@@ -13,10 +13,26 @@ eureka:
 spring:
   cloud:
     gateway:
-      routes:            
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user-service/**
+          filters:
+            - StripPrefix=2
+            
         - id: product-service
           uri: lb://product-service
           predicates:
             - Path=/api/product-service/**
           filters:
             - StripPrefix=2
+            # - AddRequestHeader=token,mitocode
+            # - AddResponseHeader=CUSTOM_RESPONSE_HEADER,HEADER_Mitocode
+
+            - MitocodeFilter=MitocodeKey, MitocodeValue
+
+            # - name: CustomFilter
+              # args:
+                # headerKey: MitocodeKey
+                # headerValue: MitocodeValue
