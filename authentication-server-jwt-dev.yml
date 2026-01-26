@@ -20,7 +20,7 @@ eureka:
 spring:
   data:
     mongodb:
-      host: 127.0.0.1
+      host: host.docker.internal
       port: 27017
       database: mitocode
       username: mitocode
