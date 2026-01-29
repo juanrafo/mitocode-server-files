@@ -21,6 +21,13 @@ spring:
           filters:
             - StripPrefix=2
 #            - MitocodeFilter=MitocodeKey, MitocodeValue
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/user-service/**
+          filters:
+            - StripPrefix=2
+#            - MitocodeFilter=MitocodeKey, MitocodeValue
 mitocode:
   security:
     client: clientMitocode
