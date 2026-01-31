@@ -31,4 +31,4 @@ kafka:
   mitocode:
     topic: mitocode
     server: host.docker.internal
-    port: 9092
+    port: 29092
