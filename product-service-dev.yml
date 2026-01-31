@@ -28,6 +28,14 @@ spring:
       uri: mongodb://mitocode:mitocode@host.docker.internal:27017
       authentication-database: admin
 
+
+# Kafka Configuration
+kafka:
+  mitocode:
+    topic: mitocode
+    server: host.docker.internal
+    port: 29092
+
 info:
   app:
     app-name: Microservicio Product Service 
