@@ -63,3 +63,8 @@ management:
   health:
     env:
       enabled: true
+
+springdoc:
+ api-docs:
+  path: /apis-docs
+  enabled: true
