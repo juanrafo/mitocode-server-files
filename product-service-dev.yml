@@ -8,7 +8,8 @@ eureka:
   client:
     register-with-eureka: true
     service-url:      
-      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://host.docker.internal:8761/eureka}
+      #defaultZone: ${EUREKA.SERVER.HOSTNAME:http://host.docker.internal:8761/eureka}
+      defaultZone: ${EUREKA.SERVER.HOSTNAME:http://discovery-server:8761/eureka}      
     fetchRegistry: true
     healthcheck:
       enable: true
