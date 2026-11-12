@@ -36,6 +36,13 @@ spring:
           filters:
             - StripPrefix=2
 #            - MitocodeFilter=MitocodeKey, MitocodeValue
+        - id: cosmosreactive
+          uri: lb://cosmosreactive
+          predicates:
+            - Path=/api/cosmosreactive/**
+          filters:
+            - StripPrefix=2
+#            - MitocodeFilter=MitocodeKey, MitocodeValue
 mitocode:
   security:
     client: clientMitocode
