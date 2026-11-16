@@ -20,12 +20,14 @@ eureka:
 spring:
   data:
     mongodb:
-      host: host.docker.internal
-      port: 27017
+      # host: host.docker.internal
+      # port: 27017
+      # database: mitocode
+      # username: mitocode
+      # password: mitocode
+      # authentication-database: admin
+      uri: ${MONGODB_URI}
       database: mitocode
-      username: mitocode
-      password: mitocode
-      authentication-database: admin
 
 mitocode:
   security:
