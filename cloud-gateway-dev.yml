@@ -11,6 +11,14 @@ eureka:
       defaultZone: ${EUREKA.SERVER.HOSTNAME:http://discovery-server:8761/eureka}      
     fetchRegistry: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway, health, info
+  endpoint:
+    gateway:
+      enabled: true
 spring:
   cloud:
     gateway:
