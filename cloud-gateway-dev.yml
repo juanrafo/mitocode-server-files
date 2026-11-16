@@ -51,6 +51,13 @@ spring:
           filters:
             - StripPrefix=2
 #            - MitocodeFilter=MitocodeKey, MitocodeValue
+        - id: authentication-server-jwt
+          uri: lb://authentication-server-jwt
+          predicates:
+            - Path=/api/authentication-server-jwt/**
+          filters:
+            - StripPrefix=2
+#            - MitocodeFilter=MitocodeKey, MitocodeValue
 mitocode:
   security:
     client: clientMitocode
